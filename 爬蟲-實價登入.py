@@ -77,9 +77,9 @@ for page in range(2, 1718):
     css_selector = f'.pageClassName a[aria-label^="Page {page}"]'
     if safe_click(driver, css_selector):
         print(f"成功點擊頁面 {page}")
-        time.sleep(1)
         results = driver.execute_script(js_script)
         all_dataframes.append(pd.DataFrame(results))
+        time.sleep(2)
     else:
         print(f"無法處理第 {page} 頁")
 
